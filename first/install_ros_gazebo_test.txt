@@ -1,0 +1,159 @@
+# Siumulation on Jetson !!
+
+***********************
+# 1. CHECK IP
+
+**And you can Refer this site for this exercise if you want.**
+
+https://github.com/ROBOTIS-GIT/turtlebot3
+*************************
+
+====================================
+# 2. installation for this Exercise
+
+*******************************************************
+./install_catkinws.sh turtle_ws
+
+cd turtle_ws/
+********************************************************
+* 2.2 Install START *
+
+# Make your setup_SimulJetson.sh.
+# visit the site and make setup_SimulJetson.sh
+
+wget https://raw.githubusercontent.com/katebrighteyes/jetson_ros_melodic/master/next/setup_SimulJetson.sh
+chmod 777 setup_SimulJetson.sh
+
+RUN !!
+$ ./setup_SimulJetson.sh
+
+--------------------------------
+
+*2.3 Download src and build **
+
+$ cd ~/turtle_ws/src/
+
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3.git
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+
+$ cd ~/turtle_ws
+$ catkin_make
+
+$ source ./devel/setup.bash
+
+**********************************************************************
+============================================
+
+# 3  START Simulation**
+
+============================================
+
+* 3.1 roslaunch turtlebot
+
+export TURTLEBOT3_MODEL=burger
+or
+export TURTLEBOT3_MODEL=waffle
+
+roslaunch turtlebot3_fake turtlebot3_fake.launch
+
+-----------------------------------------
+**another terminal **
+
+export TURTLEBOT3_MODEL=burger
+
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+Control Your TurtleBot3!
+---------------------------
+Moving around:
+        w
+   a    s    d
+        x
+
+w/x : increase/decrease linear velocity (Burger : ~ 0.22, Waffle and Waffle Pi : ~ 0.26)
+a/d : increase/decrease angular velocity (Burger : ~ 2.84, Waffle and Waffle Pi : ~ 1.82)
+
+space key, s : force stop
+
+
+===============================================
+**3.2 relationship **
+
+$ rqt_graph
+
+===============================================
+* 3.3 Check Topic
+$ rostopic list
+
+* 3.4 Check echo
+$ rostopic echo /cmd_vel
+$ rostopic echo /odom
+
+* 3.5
+$ rosrun rqt_tf_tree rqt_tf_tree
+
+====================================
+ ***** gazebo and telelop ***** 
+====================================
+1. world gazebo
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+---------------------------------------------------------
+*Note: If this node failed
+libcurl: (51) SSL: no alternative certificate subject name matches target host name 'api.ignitionfuel.org' 
+-> You need  vim ~/.ignition/fuel/config.yaml and modify as following.
+
+url: https://api.ignitionfuel.org
+to
+url: https://api.ignitionrobotics.org
+---------------------------------------------------------
+2. turtlebot3_teleop
+
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+====================================
+ ***** look around various gazebo ***** 
+====================================
+1. empty gazebo
+$ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+
+2. world gazebo
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+3. house
+$ roslaunch turtlebot3_gazebo turtlebot3_house.launch
+
+========================================
+*** YOU CAN USE RVIZ
+========================================
+
+$ roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch
+
+====================================
+ ***** move in gazebo ***** 
+====================================
+1) by teleop
+====================================
+1. world gazebo
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. teleop
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+3. check rqt_graph
+$ rqt_graph 
+
+====================================
+2) by drive simulationm
+====================================
+1. world gazebo
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. simulation
+roslaunch turtlebot3_gazebo turtlebot3_simulation.launch
+
+3. check rqt_graph
+$ rqt_graph 
+
+
+
