@@ -3,3 +3,11 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A
 sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
 sudo apt-get install apt-utils -y
 sudo apt-get install librealsense2-utils librealsense2-dev -y
+
+
+#realsense ros
+sudo apt-get install ros-melodic-realsense2-camera
+
+#rtabmap
+sudo apt-get install ros-melodic-imu-filter-madgwick
+sudo apt install ros-melodic-rtabmap-ros
