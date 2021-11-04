@@ -11,3 +11,6 @@ sudo apt-get install ros-melodic-realsense2-camera
 #rtabmap
 sudo apt-get install ros-melodic-imu-filter-madgwick
 sudo apt install ros-melodic-rtabmap-ros
+
+$ sudo apt-get install ros-melodic-robot-localization
+
