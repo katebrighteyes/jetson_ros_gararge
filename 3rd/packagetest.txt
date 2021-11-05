@@ -21,6 +21,7 @@ rosrun ros_topic_test test_pub_topic.py
 rosrun ros_topic_test test_sub_topic.py
 cd ..
 
+cd ~/catkin_ws/src/ros_topic_test/
 mkdir launch
 cd launch 
 
