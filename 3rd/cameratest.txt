@@ -1,0 +1,13 @@
+======================================
+cd ~/catkin_ws/src
+
+cd ~/catkin_ws/src/ros_topic_test/src
+
+gedit camera.py
+
+cd ..
+cd launch
+
+gedit camera.launch
+
+roslaunch ros_topic_test camera.launch
