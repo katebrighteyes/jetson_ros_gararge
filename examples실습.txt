@@ -1,0 +1,16 @@
+# Download rosbag file
+
+https://docs.google.com/uc?id=0B46akLGdg-uadXhLeURiMTBQU28&export=download
+
+# example
+$ roslaunch rtabmap_ros demo_robot_mapping.launch
+$ rosbag play --clock demo_mapping.bag
+
+#The localization mode:
+$ roslaunch rtabmap_ros demo_robot_mapping.launch localization:=true
+$ rosbag play --clock demo_mapping.bag
+he localization mode:
+
+#Robot mapping with RV
+$ roslaunch rtabmap_ros demo_robot_mapping.launch rviz:=true rtabmapviz:=false
+$ rosbag play --clock demo_mapping.bag
