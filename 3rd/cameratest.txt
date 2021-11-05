@@ -5,9 +5,15 @@ cd ~/catkin_ws/src/ros_topic_test/src
 
 gedit camera.py
 
+(https://github.com/katebrighteyes/jetbot_ros/blob/master/cameratest/camera.py)
+
+<TODO>
+https://github.com/katebrighteyes/jetbot_ros/blob/master/cameratest/todo.txt
+
 cd ..
 cd launch
 
 gedit camera.launch
+(https://github.com/katebrighteyes/jetbot_ros/blob/master/cameratest/camera.launch)
 
 roslaunch ros_topic_test camera.launch
