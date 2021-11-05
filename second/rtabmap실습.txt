@@ -1,3 +1,14 @@
+# INSTALL octomap_rviz_plugins
+
+cd catkin_ws/
+cd src/
+git clone https://github.com/OctoMap/octomap_rviz_plugins
+cd ..
+catkin_make
+
+source ~/catkin_ws/devel/setup.bash
+
+-----------------------------------------
 
 $ roslaunch realsense2_camera rs_camera.launch align_depth:=true unite_imu_method:="linear_interpolation"
 
