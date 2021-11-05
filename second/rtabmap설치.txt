@@ -8,6 +8,15 @@ sudo apt-get install librealsense2-utils librealsense2-dev -y
 #realsense ros
 sudo apt-get install ros-melodic-realsense2-camera
 
+# TO CHECK
+#
+roscd realsense2_camera
+chmod 777 *
+chmod 777 .
+# Modify depth_fps, color_fps in demo_pointcloud2.launch
+roslaunch realsense2_camera demo_pointcloud2.launch
+
+
 #rtabmap
 sudo apt-get install ros-melodic-imu-filter-madgwick
 sudo apt install ros-melodic-rtabmap-ros
