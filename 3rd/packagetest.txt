@@ -1,0 +1,44 @@
+cd ~/catkin_ws/src
+
+catkin_create_pkg ros_topic_test std_msgs rospy
+
+##터미널을 닫는다.
+
+cd ~/catkin_ws/src/ros_topic_test/src
+
+gedit test_pub_topic.py
+(https://github.com/katebrighteyes/jetbot_ros/blob/master/test_pub_topic.py)
+gedit test_sub_topic.py
+(https://github.com/katebrighteyes/jetbot_ros/blob/master/test_sub_topic.py)
+cd catkin_ws
+
+catkin_make
+
+----------------------------
+roscore
+
+rosrun ros_topic_test test_pub_topic.py
+rosrun ros_topic_test test_sub_topic.py
+cd ..
+
+mkdir launch
+cd launch 
+
+gedit topic_test.launch
+(https://github.com/katebrighteyes/jetbot_ros/blob/master/topic_test.launch)
+
+roslaunch ros_topic_test topic_test.launch
+
+======================================
+cd ~/catkin_ws/src
+
+cd ~/catkin_ws/src/ros_topic_test/src
+
+gedit camera.py
+
+cd ..
+cd launch
+
+gedit camera.launch
+
+roslaunch ros_topic_test camera.launch
