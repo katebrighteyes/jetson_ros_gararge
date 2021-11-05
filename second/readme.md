@@ -9,10 +9,15 @@ rosbag record -a
 
 ---------------
 다른 창
+
 roscore
+
 다른 창
+
 rosrun turtlesim turtlesim_node
+
 다른 창
+
 rosrun turtlesim turtle_teleop_key
 
 --------------
