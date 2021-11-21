@@ -1,0 +1,23 @@
+
+cd ~/catkin_ws/src
+
+catkin_create_pkg ros_depth_test std_msgs rospy
+
+##터미널을 닫는다.
+
+cd ~/catkin_ws/src/ros_depth_test/src/
+
+gedit test_depth_node.py
+(https://github.com/katebrighteyes/jetbot_ros/blob/master/test_depth_node.py)
+chmod 777 test_depth_node.py
+
+cp pyrealsense/realsense_depth.py ./
+
+cd ~/catkin_ws
+
+catkin_make
+
+----------------------------
+roscore
+
+rosrun ros_depth_test test_depth_node.py
